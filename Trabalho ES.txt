@@ -1,0 +1,851 @@
+
+
+
+Escopo:
+
+
+Sistema de gerenciamento de logística e dos serviços fornecidos pelos restaurantes universitários da UFF em Niterói. O sistema gerenciará o estoque de insumos, de comida pronta/ativa e as receitas e necessidades nutricionais. Também lidará com o gerenciamento de pagamentos dos estudantes bem como a organização destes em uma fila virtual. Os usuários finais do sistema serão os funcionários dos restaurantes e os discentes e docentes da universidade.
+
+
+
+
+Requisitos funcionais:
+
+
+1 - Requisitos gerais:
+
+
+rf1.1: O sistema deve permitir login de usuário.
+rf1.2: O sistema deve exibir interfaces diferentes para administradores e alunos/professores que comem no bandejão
+rf1.3: O sistema deve permitir níveis de acesso diferentes. 
+rf1.4: O sistema deve ter um sistema de fila para clientes entrarem no ru.
+rf1.5: O sistema deve permitir recarga de saldo para clientes.
+
+
+2 - Requisitos de fila para os usuários:
+1. O sistema deve ter um sistema de fila.
+2. O sistema deve permitir que o usuário entre na fila.
+3. O sistema deve permitir ao usuário sair da fila.
+4. O sistema deve exibir ao usuário sua posição na fila.
+5. O sistema deve notificar o usuário sobre a evolução de sua posição na fila.
+6. O sistema deve permitir que o usuário  personalize as notificações.
+7. O sistema deve permitir diferentes níveis de prioridade ao entrar na fila.
+8. O sistema deve exibir uma estimativa de tempo de espera.
+9. O sistema deve exibir avisos no caso de imprevistos que acontecem no RU.
+10. O sistema deve permitir a confirmação/desistência do usuário de sua posição na fila.
+11. O sistema deve ter uma funcionalidade que permita o usuário retroceder posições na fila.
+12. O sistema deve permitir que os usuários deem feedbacks sobre a experiência na fila.
+
+
+  
+2.1 - Requisitos da fila para os administradores:
+1. O sistema deve exibir em tempo real o número de pessoas na fila, o tempo médio de espera e os horários de pico.
+2. O sistema deve receber informações das catracas físicas presentes no local para registrar pessoas entrando e saindo do local.
+3. O sistema deve permitir que os administradores monitorem quantas pessoas estão comendo no RU em um instante.
+4. O sistema deve controlar a capacidade máxima de pessoas simultaneamente no refeitório.
+5. O sistema deve gerar relatórios históricos de fluxo e de refeições servidas.
+6. O sistema deve integrar-se ao cardápio e exibir o prato do dia junto da fila.
+7. O sistema deve permitir a gestão de prioridades de entrada (idosos, gestantes, PCDs, bolsistas, etc.).
+
+
+
+
+3- Requisitos de estoque:
+
+
+*Funcionais:
+rf3.1: O sistema deve armazenar a quantidade de ingredientes em estoque.
+rf3.2: O sistema deve armazenar a quantidade de alimentos prontos para consumo em estoque.
+rf3.3: O sistema deve permitir que o administrador edite a quantidade de ingredientes em estoque.
+rf3.4: O sistema deve permitir que o administrador edite a quantidade de  alimentos prontos para consumo em estoque.
+rf3.5: O sistema deve permitir que o administrador consulte a quantidade de cada ingrediente-não-preparado.
+rf3.6: O sistema deve permitir que o administrador consulte a quantidade de cada  alimento prontos para consumo.
+rf3.7: O sistema deve permitir que o administrador informe que um certo item, num certo bandejão, acabou.
+rf3.8: O sistema deve permitir que o administrador faça um pedido para envio de mais comida.
+rf3.9: O sistema deve permitir que o responsável pelo envio de comida receba e seja notificado dos pedidos de envio de comida.
+rf3.10: O sistema deve permitir que o administrador responsável pelo envio do pedido receba “feedback” do seu pedido.
+rtf.11: O sistema deve possibilitar que os administradores monitorem as informações da viagem de envio do pedido (tempo estimado, item pedido, veículo do transporte, motorista responsável).
+rtf.12: Permitir o administrador informar os relatórios de consumo de ingredientes e refeições em períodos (Diário [almoço/janta], Semanal, Mensal).
+rtf.13: Permitir o administrador informar se houver sobra de comida.
+rtf. 14: : O sistema deve emitir alertas quando o estoque mínimo de um ingrediente for atingido.
+rf4. 15: O sistema deve permitir que o administrador consulte o prazo de validade de cada ingrediente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4 - Requisitos funcionais de receitas e nutrição:
+rf4.1: O sistema deve conter um processo de aprovação do controle de qualidade dos alimentos.
+rf4. 2: O sistema deve exibir ao usuário o cardápio do dia.
+rf4. 3: O sistema deve possibilitar ao usuário o acesso às informações nutricionais dos alimentos.
+rf4. 4: O sistema deve permitir que funcionários no ru registrem casos de contaminação de alimentos
+rf4. 5: O sistema deve alertar os funcionários que gerem o ru em casos de contaminação dos alimentos
+rf4. 6: O sistema deve permitir que o usuário avalie a qualidade da refeição.
+rf4. 7: O sistema deve permitir que o administrador informe os valores nutricionais de cada alimento
+rf4.8: O sistema deve gerar relatórios nutricionais consolidados (ex: média de calorias e nutrientes ofertados por semana).
+
+
+Requisitos  não-funcionais:
+
+
+1 - Requisitos gerais não funcionais:
+rnf1.1: Deve seguir diretrizes de acessibilidade digital (WCAG), permitindo uso por pessoas com deficiência.
+vvg
+
+
+2 - Requisitos de fila não funcionais:
+1. EF 1: O sistema deve atualizar sua posição na fila a cada minuto
+2.  DS 1: O sistema deve ficar disponível durante 2 horas e 15 minutos a partir do horário de início da refeição
+
+
+
+
+3- Requisitos de estoque não funcionais:
+
+
+rnf3.1: O sistema deve permitir atualização em tempo real da quantidade de ingredientes em estoque com base na quantidade retirada para preparação.
+rnf3.2: O sistema deve ser capaz de suportar múltiplos acessos simultâneos (administração, cozinha, nutricionista).
+rmf3.3: O sistema deve proteger dados sensíveis como custos e fornecedores, com permissões de acesso.
+
+
+
+
+
+
+4 - Requisitos de receitas e nutrição não funcionais:
+rnf4.1: O sistema deve exibir o cardápio e informações nutricionais em até 2 segundos após a solicitação.
+rnf4.2: As avaliações de usuários devem ser armazenadas de forma segura e protegidas contra acesso não autorizado.
+rnf4.3: Informações sobre contaminação e alertas críticos devem ser transmitidos apenas a perfis autorizados
+
+
+
+
+
+
+Casos de Uso
+
+
+Fila
+Nome: UC-FILA-01 - Entrar na fila
+ § Cenário típico
+1. O usuário acessa o sistema IdUFF.
+2. O usuário acessa a tela da fila e seleciona o RU.
+3. O sistema exibe capacidade e tamanho da fila de cada RU, bem como as políticas/regras.
+4. O usuário (se elegível) escolhe a prioridade desejada.
+5. O usuário confirma a entrada na fila.
+6. O sistema valida a elegibilidade (RU aberto, saldo, etc.).
+7. O sistema registra o ingresso na fila e atribui a posição.
+8. O sistema calcula e apresenta a estimativa de espera (ETA).
+9. O sistema agenda as notificações conforme preferências.
+§ Cenários alternativos
+– 2.a: RU fechado ou indisponibilidade do sistema
+1. O sistema informa indisponibilidade.
+2. Retorna ao passo 1 do fluxo principal.
+
+– 4.a: Usuário não elegível à prioridade
+3. O sistema oculta opções de prioridade.
+4. Retorna ao passo 4 do fluxo principal.
+– 4.b: Usuário escolhe prioridade a ser confirmada
+1. O usuário envia foto do comprovante de sua prioridade
+2. O sistema retorna se ele está ou não apto 
+– 5.a: Saldo insuficiente 
+5. O sistema recusa a entrada na fila e solicita a recarga do saldo via IdUFF.
+6. Após recarga, retorna ao passo 5 do fluxo principal.
+Nome: UC-FILA-02 - Sair da fila (Desistência)
+ § Cenário típico
+1. O usuário aciona a opção “Sair da fila”.
+2. O sistema solicita confirmação.
+3. O usuário confirma.
+4. O sistema remove o usuário e reordena a fila.
+5. O sistema atualiza os ETA dos demais e confirma a saída.
+6. O sistema registra, opcionalmente, o motivo da desistência.
+
+§ Cenários alternativos
+– 2.a: Usuário está muito próximo de ser chamado
+   1. O sistema informa a política específica de desistência.
+   2. O usuário confirma e segue para o passo 4, ou cancela e retorna ao passo 1.
+
+
+Nome: UC-FILA-03 - Consultar posição e estimativa de tempo
+ § Cenário típico
+   1. O usuário abre a tela da fila pelo IdUFF.
+   2. O sistema exibe a posição atual, ETA e avisos do RU.
+   3. O sistema atualiza automaticamente a cada intervalo definido pelo sistema.
+   4. O usuário pode forçar atualização manual (se desejar).
+§ Cenários alternativos
+ – 1.a: Usuário não está na fila
+   1. O sistema oferece a ação “Entrar na fila”.
+   2. Se o usuário aceitar, seguir UC-FILA-01.
+ – 2.a: Imprevistos no RU impactam o ETA
+   3. O sistema recalcula ETA e exibe aviso contextual.
+   4. Retorna ao passo 2 do fluxo principal.
+Nome: UC-FILA-04 - Configurar notificações
+ § Cenário típico
+   1. O usuário abre a tela da fila pelo IdUFF.
+   2. O usuário abre “Preferências de notificação”.
+   3. O usuário define limiares (ex.: faltam X pessoas/minutos) para receber as notificações..
+   4. O sistema valida configurações e as salva.
+   5. O sistema confirma a ativação das preferências.
+
+
+Nome: UC-FILA-05 - Confirmar presença
+ § Cenário típico
+      1. O sistema dispara um prompt de confirmação ao atingir um marco (ex.: top 50/top 20).
+      2. O usuário confirma presença.
+      3. O sistema mantém a posição e registra o timestamp.
+
+§ Cenários alternativos
+– 2.a: Sem resposta no prazo
+         1. O sistema remove o usuário da fila por inatividade.
+         2. O sistema notifica a remoção.
+ – 2.b: Usuário escolhe desistir
+         3. O sistema executa UC-FILA-02.
+
+
+Nome: UC-FILA-06 - Retroceder posições
+ § Cenário típico
+         1. O usuário abre a tela da fila pelo IdUFF.
+         2. O usuário seleciona “Retroceder”.
+         3. O sistema exibe a opção para o usuário digitar a matrícula do usuário a qual ele quer se juntar na fila.
+         4. O usuário confirma a operação.
+         5. O sistema altera a posição do usuário na fila.
+         6. O sistema reordena a fila e recalcula o ETA.
+         7. O sistema confirma a nova posição.
+§ Cenários alternativos
+– 4.a: A matrícula inserida é inválida
+         1. O sistema retorna uma mensagem de erro
+         2. Retorna ao passo 3 do fluxo principal.
+– 4.a: Limite excedido
+         3. O sistema informa a regra e bloqueia a operação.
+         4. Retorna ao passo 2 do fluxo principal.
+
+Nome: UC-FILA-07 - Enviar feedback da experiência
+ § Cenário típico
+            1. O sistema oferece formulário curto após atendimento ou desistência.
+            2. O usuário avalia tempo/organização/satisfação e insere comentários.
+            3. O sistema registra o feedback e apresenta agradecimento.
+
+§ Cenários alternativos
+– 1.a: Usuário ignora a solicitação
+               1. O sistema não insiste e encerra o fluxo.
+Nome: UC-FILA-08 - Ver painel em tempo real (Admin)
+ § Cenário típico
+               1. O administrador acessa o painel do sistema;
+               2. O sistema exibe: pessoas na fila nos RU, ETA médio e horários de pico.
+               3. O administrador aplica filtros (turno, campus, período).
+§ Cenários alternativos
+– 2.a: Dados de catraca degradados/indisponíveis
+               1. O sistema sinaliza dados estimados e perda de qualidade.
+               2. Retorna ao passo 2 do fluxo principal.
+
+
+Nome: UC-FILA-09 - Configurar capacidade e prioridades (Admin)
+ § Cenário típico
+               1. O administrador abre “Configurações de operação”.
+               2. O sistema valida que o nível de acesso do administrador permite tal funcionalidade.
+               3. O administrador define a capacidade simultânea do salão.
+               4. O administrador configura critérios de prioridade e pesos.
+               5. O administrador define se o RU está aberto ou fechado.
+               6. O sistema valida consistência e salva.
+               7. O sistema aplica as regras ao motor de fila e recalcula a ETA quando necessário.
+
+§ Cenários alternativos
+– 2.a: Funcionalidade não permitida para o nível de acesso
+                  1. O sistema exibe um aviso de que a funcionalidade não é permitida para aquele nível de acesso.
+                  2. Retorna à tela inicial do sistema.
+
+
+
+Nome: UC-FILA-10 - Conciliar eventos das catracas
+ § Cenário típico
+                     1. A catraca envia evento de entrada/saída.
+                     2. O sistema registra o evento e atualiza a contagem no RU.
+                     3. O sistema cruza os eventos com a fila (quem foi chamado vs. quem entrou).
+                     4. O sistema sinaliza divergências e gera lista para conferência.
+
+§ Cenários alternativos
+– 1.a: Falha de comunicação com a catraca
+                        1. O sistema enfileira eventos para retentativa e sinaliza degradação no painel.
+                        2. Retorna ao passo 1 do fluxo principal quando restabelecido.
+ – 3.a: Divergência persistente
+                        3. O sistema registra ticket para verificação manual.
+                        4. Retorna ao passo 5 do fluxo principal.
+Nome: UC-FILA-11 - Gerar relatórios (Admin)
+ § Cenário típico
+                        1. O administrador solicita relatório.
+                        2. O administrador escolhe período e indicadores.
+                        3. O sistema consolida dados de fila, catracas e feedbacks.
+                        4. O sistema apresenta a visualização e permite download.
+§ Cenários alternativos
+ – 3.a: Volume de dados elevado
+                        1. O sistema avisa sobre maior tempo de processamento e sugere filtros.
+                        2. Retorna ao passo 2 do fluxo principal.
+
+
+
+
+( ESTOQUE )
+
+
+Nome: UC-ESTOQUE-01 - Preparo da comida
+Atores: RPR
+Visão geral: Um conjunto de alimentos precisam ser preparados para consumo. O responsável pelo retirada atualiza a quantidade de insumos e de alimentos prontos para consumo no estoque.
+Referência cruzada: Requisitos -> R1, R2, R3, R4, R5, R6, R7, 14.
+Gatilho: Não há.
+Pré-condição: Há os insumos necessários para preparar a comida no estoque.
+Pós-condições: Os insumos utilizados são reduzidos no estoque e a quantidade de comida pronta é atualizada.
+                        1. Responsável pela retirada (cozinheiro?) retira a quantidade de insumo.
+                        2. Responsável “dá baixa” no estoque.
+                        3. O sistema atualiza a quantidade de ingredientes.
+                        4. O sistema atualiza a quantidade de alimentos para consumo.
+                        5. Os cozinheiros preparam a comida.
+Cenários alternativos:
+                        * 3. a Sistema identifica limite mínimo do estoque.
+                        1. Responsável notifica o outro responsável pela compra de mais insumos.
+                        2. Retorna ao passo 4 do fluxo principal.
+
+
+                        * 5. a. Erro no preparo
+                        1. Descarta a comida ruim.
+                        2. Retorna ao passo 1 do fluxo principal.
+
+
+
+
+Nome: UC-ESTOQUE-02 - Envio da comida
+Atores: RU remetente e RU destinatário.
+Visão geral: O RU remetente envia alimentos prontos para consumo ao RU destinatário, além de realizar baixa no estoque, atualização do sistema e notificação da unidade receptora.
+Referência cruzada: Requisitos -> R4, R6, R11.
+Gatilho: UC-ESTOQUE-03 - Pedido de comida.
+Pré-condição: Há comida pronta para consumo necessária para o envio a todos os RU’s.
+Pós-condições: A comida pronta para consumo é reduzida do estoque e a notificação com as informações do envio é encaminhada ao RU destinatário.
+
+
+                        1. O responsável pelo envio consulta a quantidade do alimento pronto para consumo requisitado pela unidade destinatária.
+                        2. O responsável pelo envio retira a quantidade do estoque.
+                        3. O responsável pelo envio “dá baixa” no estoque.
+                        4. O sistema atualiza a quantidade de alimentos para consumo.
+                        5. O responsável pelo envio repassa as informações do pedido para o sistema.
+                        6. O responsável pelo envio deve confirmar a saída da comida.
+                        7. O remetente deve notificar o RU destinatário de que a comida está a caminho.
+                        8. Chama o caso UC-ESTOQUE-04 - Recebe comida.
+
+
+
+
+Nome: UC-ESTOQUE-03 - Pedido de comida
+Atores: RU fornecedor e RU destinatário.
+Visão geral: Um RU precisa de mais comida, então faz uma solicitação pedindo mais.
+Referência cruzada: Requisitos -> R4, R6, R7, R8, R9, R10.
+Gatilho: UC-ESTOQUE-04 - Recebe comida
+Pré-condição:
+Pós-condições: 
+
+
+                        1. O RU destinatário envia uma solicitação de envio de mais comida.
+                        2. O RU fornecedor recebe a notificação.
+                        3. O RU fornecedor aceita o pedido.
+                        4. O RU fornecedor envia a notificação que o pedido foi aceito.
+                        5. O RU destinatário recebe a notificação que o pedido foi aceito.
+                        6. Chama o caso UC-ESTOQUE-02 - Envio da comida.
+
+
+Cenários alternativos:
+                        * 3. a. Pedido negado
+                        1. O RU fornecedor nega o pedido.
+                        2. O RU fornecedor envia a notificação que o pedido foi negado.
+                        3. O RU destinatário recebe a notificação que o pedido foi negado.
+                        4. Encerra o fluxo de pedido.
+
+
+
+
+Nome: UC-ESTOQUE-04 - Recebe comida
+Atores: RU fornecedor e RU destinatário 
+Visão geral: O RU destinatário recebe os alimentos enviados pelo RU fornecedor, confere a entrega, atualiza o sistema e notifica o fornecedor sobre a chegada da comida.
+Referência cruzada: Requisitos -> R4, R6, R8, R10.
+Gatilho: UC-ESTOQUE-02 - Envio da comida
+Pré-condição: O RU fornecedor deve ter enviado os alimentos (UC-ESTOQUE-02 concluído) e o sistema deve conter o registro do envio.
+Pós-condições: A quantidade de alimentos prontos no RU destinatário é incrementada com a quantidade recebida
+
+
+                        1. O RU destinatário checa a comida enviada.
+                        2. O RU destinatário deve notificar que a comida chegou com sucesso, uma vez que a comida tenha chegado.
+                        3. O RU fornecedor deve receber a notificação de que a comida chegou.
+                        4. O RU destinatário atualiza a quantidade de alimento pronto para consumo no sistema.
+Cenários alternativos:
+                        * 1. a. A comida não chegou
+                        1. O RU destinatário não recebe a comida.
+                        2. O RU destinatário registra a divergência no sistema.
+                        3. Chama o caso UC-ESTOQUE-03 - Pedido de comida.
+
+
+                        * 1. b. Identifica um erro de quantidade insuficiente
+1.  O RU destinatário checa a comida enviada, verificando o erro de quantidade insuficiente.
+2. O RU destinatário registra a divergência no sistema.
+3. O RU destinatário *pode solicitar a comida restante.
+4. Chama o caso UC-ESTOQUE-03 - Pedido de comida.
+
+
+
+
+Nome: UC-ESTOQUE-05 - Gerar relatório
+Atores: Supervisor 
+Visão geral: O supervisor solicita que o sistema gere um relatório contendo informações de sua escolha.
+Referência cruzada: Requisitos -> R12, R15.
+Gatilho: Não há.
+Pré-condição: Existem dados suficientes para a geração do relatório.
+Pós-condições: O relatório gerado pelo sistema contém somente as informações solicitadas pelo Supervisor.
+
+
+                        1. Supervisor escolhe o dado/parâmetro a ser relatado.
+                        2. Supervisor solicita ao sistema o relatório.
+                        3. Sistema faz a consolidação dos dados.
+                        4. Sistema exibe o relatório para visualização e download.
+
+
+Cenários alternativos:
+                        * 3. a. Ocorre erro durante a consolidação de dados.
+                        1. Sistema exibe notificação de erro.
+                        2. Fim do fluxo.
+
+
+
+
+Nome: UC-ESTOQUE-06 - Fim de serviço
+Atores: Supervisor 
+Visão geral: O Supervisor atualiza o sistema com os dados de quantidade de alimentos que sobraram no pós-serviço.
+Referência cruzada: Requisitos -> R12, R13.
+Gatilho: Não há.
+Pré-condição: O horário de funcionamento do RU chegou ao fim.
+Pós-condições: É registrado no sistema a informação sobre a quantidade de comida que sobrou.
+                        1. Responsável registra o fim do dia de serviço.
+                        2. Responsável registra a quantidade de comida pronta que sobrou.
+Receitas e Nutrição
+
+
+Nome: UC-Nutri-01 - Aprovação do controle de qualidade
+
+
+Atores: Administrador
+
+
+Pré-requisitos: Administrador deve estar logado no sistema
+Cenário típico:
+                        1. Equipe de controle de qualidade vai ao local onde é preparado a comida.
+                        2. Equipe de controle de qualidade averigua o estado da comida.
+                        3. Administrador aprova a qualidade da comida no sistema.
+                        4. Sistema registra a aprovação.
+                        5. Sistema exibe ao administrador o status da aprovação.
+
+
+Cenários alternativos:
+        2.a A comida não passa pelo controle de qualidade
+                1. Administrador reprova a qualidade da comida no sistema
+                2. Sistema registra a reprovação
+                3. Sistema notifica supervisores responsáveis pela comida sobre o incidente
+                4. Sistema exibe ao administrador o status da reprovação
+                5. Fim de caso de uso
+
+
+Nome: UC-Nutri-02 - Consulta do cardápio
+Atores: Cliente
+
+
+Cenário típico:
+                        1. Cliente acessa a área de cardápio do dia.
+                        2. Sistema lista todos os restaurantes abertos
+                        3. O cliente seleciona um restaurante
+                        4. Sistema exibe o cardápio do dia incluindo informações nutricionais
+
+
+Cenários alternativos:
+        1.a Cliente não está conectado
+                1. Caso de uso incluido: Login
+
+
+Nome: UC-Nutri-03 - Relatar Contaminação
+
+
+Atores: Funcionário
+
+
+Pré-requisitos: É identificado um caso de contaminação; Funcionário está logado no sistema
+
+
+Cenário típico:
+                        1. O funcionário acessa a área ‘Relatos de contaminação’ no sistema.
+                        2. O sistema exibe um formulário.
+                        3. O funcionário descreve o ocorrido.
+                        4. O funcionário envia o relato.
+                        5. O sistema registra o relato.
+                        6. O sistema notifica o relato para supervisores.
+
+
+Nome: UC-Nutri-04 - Registrar valores nutricionais
+
+
+Atores: Administrador
+
+
+Pré-requisitos: O Administrador está logado no sistema
+
+
+Cenário típico:
+                        1. O administrador entra na seção de alimentos do sistema.
+                        2. O sistema exibe os alimentos registrados.
+                        3. O administrador começa a edição do alimento.
+                        4. O sistema exibe as informações do alimento.
+                        5. O administrador edita as informações nutricionais do alimento.
+                        6. O administrador finaliza as mudanças
+                        7. O sistema salva as mudanças.
+
+
+Nome: UC-Nutri-05 - Acessar relatórios nutricionais consolidados
+
+
+Atores: Administrador
+
+
+Pré-requisitos: O Administrador está logado no sistema
+Cenário típico:
+                        1. O administrador acessa a seção de relatórios nutricionais.
+                        2. O sistema gera um relatório nutricional baseado nos cardápios semanais
+                        3. O sistema exibe esse relatório ao administrador.
+
+
+
+
+
+
+Estoque Diagrama:
+Falta questão de at
+
+
+@startuml
+left to right direction
+skinparam usecase {
+  BackgroundColor #fff173
+  BorderColor Black
+}
+
+
+skinparam actorBackgroundColor #fff173
+
+
+actor "Funcionário" as Fun
+actor "Responsável pela Retirada" as RPR
+actor "RU Remetente" as Rem
+actor "RU Destinatário" as Dest
+actor "Supervisor" as Sup
+
+
+rectangle "Gestão de Estoque" {
+  usecase "Preparo da comida" as ES1
+  usecase "Envio da comida" as ES2
+  usecase "Pedido de comida" as ES3
+  usecase "Receber comida" as ES4
+  usecase "Gerar relatório" as ES5
+  usecase "Fim de serviço" as ES6
+  usecase "Atualizar estoque de insumos" as ES7
+  usecase "Receber insumos" as ES8
+}
+
+
+RPR -- ES1
+Rem -- ES2
+Dest -- ES2
+Rem -- ES3
+Dest -- ES3
+Rem -- ES4
+Dest -- ES4
+Sup -- ES5
+Rem -- ES6
+Dest -- ES6
+Rem -- ES8
+
+
+
+
+Fun <|--RPR
+
+
+Fun <|--Rem
+
+
+Fun <|--Dest
+
+
+Fun <|--Sup
+
+
+
+
+
+
+ES8 ..> ES7 : <<include>>
+ES1 ..> ES7 : <<include>>
+ES3 ..> ES2 : <<include>>
+ES4 <.. ES2 : <<include>>
+@enduml
+
+
+Fila
+
+
+@startuml
+left to right direction
+skinparam usecase {
+  BackgroundColor #fff173
+  BorderColor Black
+}
+skinparam actorBackgroundColor #fff173
+
+
+actor "IdUFF" as User
+actor "Supervisor" as Admin
+actor "Sistema de Catracas" as Catraca
+
+
+
+
+  usecase "Entrar na fila" as UC1
+  usecase "Sair da fila" as UC2
+  usecase "Consultar posição e ETA" as UC3
+  usecase "Configurar notificações" as UC4
+  usecase "Confirmar presença" as UC5
+  usecase "Retroceder posições" as UC6
+  usecase "Enviar feedback" as UC7
+  usecase "Ver painel em tempo real" as UC8
+  usecase "Configurar capacidade e prioridades" as UC9
+  usecase "Conciliar eventos das catracas" as UC10
+  usecase "Gerar relatórios" as UC11
+
+
+
+
+' Ligações do usuário comum
+User -- UC1
+User -- UC2
+User -- UC3
+User -- UC4
+User -- UC5
+User -- UC6
+User -- UC7
+
+
+' Ligações do administrador
+Admin -- UC8
+Admin -- UC9
+Admin -- UC11
+
+
+' Ligações do sistema de catracas
+Catraca -- UC10
+
+
+' Relações de extensão/inclusão
+UC1 ..> UC3 : <<include>>
+UC5 ..> UC3 : <<include>>
+UC6 ..> UC3 : <<include>>
+
+
+@enduml
+
+
+
+
+
+
+Nutricao
+
+
+@startuml
+left to right direction
+skinparam usecase {
+  BackgroundColor #fff173
+  BorderColor Black
+}
+skinparam actorBackgroundColor #fff173
+
+
+actor "Supervisor" as Admin
+actor "IdUFF" as Cli
+
+
+
+
+  usecase "Aprovar controle de qualidade" as NU1
+  usecase "Consultar cardápio" as NU2
+  usecase "Relatar contaminação" as NU3
+  usecase "Registrar valores nutricionais" as NU4
+  usecase "Acessar relatórios nutricionais" as NU5
+
+
+
+
+' Ligações dos atores
+Admin -- NU1
+Cli -- NU2
+Func -- NU3
+Admin -- NU4
+Admin -- NU5
+
+
+Func<|--Admin
+
+
+
+
+
+
+@enduml
+
+
+
+
+PUML TOTAL:
+
+
+@startuml
+left to right direction
+skinparam usecase {
+  BackgroundColor #fff173
+  BorderColor Black
+}
+skinparam actorBackgroundColor #fff173
+
+
+' ==== Atores globais (compartilhados) ====
+actor "Funcionário" as Fun
+actor "Responsável pela Retirada" as RPR
+actor "RU Remetente" as Rem
+actor "RU Destinatário" as Dest
+actor "Supervisor" as Sup
+actor "IdUFF" as User
+actor "Sistema de Catracas" as Catraca
+
+
+usecase "Faz login" as Login
+Fun -- Login
+
+
+' Heranças (mesmo padrão do seu diagrama de Estoque)
+Fun <|-- RPR
+Fun <|-- Rem
+Fun <|-- Dest
+Fun <|-- Sup
+
+
+' =========================================================
+' ===================== GESTÃO DE ESTOQUE =================
+' =========================================================
+rectangle "Gestão de Estoque" {
+  usecase "Preparo da comida" as ES1
+  usecase "Envio da comida" as ES2
+  usecase "Pedido de comida" as ES3
+  usecase "Receber comida" as ES4
+  usecase "Gerar relatório" as ES5
+  usecase "Fim de serviço" as ES6
+  usecase "Atualizar estoque de insumos" as ES7
+  usecase "Receber insumos" as ES8
+}
+
+
+RPR -- ES1
+Rem -- ES2
+Dest -- ES2
+Rem -- ES3
+Dest -- ES3
+Rem -- ES4
+Dest -- ES4
+Sup -- ES5
+Rem -- ES6
+Dest -- ES6
+Rem -- ES8
+
+
+ES8 ..> ES7 : <<include>>
+ES1 ..> ES7 : <<include>>
+ES3 ..> ES2 : <<include>>
+ES4 <.. ES2 : <<include>>
+
+
+
+
+
+
+' =========================================================
+' ======================== FILA VIRTUAL ===================
+' =========================================================
+rectangle "Fila Virtual" {
+  usecase "Entrar na fila" as UC1
+  usecase "Sair da fila" as UC2
+  usecase "Consultar posição e ETA" as UC3
+  usecase "Configurar notificações" as UC4
+  usecase "Confirmar presença" as UC5
+  usecase "Retroceder posições" as UC6
+  usecase "Enviar feedback" as UC7
+  usecase "Ver painel em tempo real" as UC8
+  usecase "Configurar capacidade e prioridades" as UC9
+  usecase "Conciliar eventos das catracas" as UC10
+  usecase "Gerar relatórios" as UC11
+}
+
+
+' Ligações do usuário
+User -- UC1
+User -- UC2
+User -- UC3
+User -- UC4
+User -- UC5
+User -- UC6
+User -- UC7
+
+
+' Ligações do supervisor (admin)
+Sup -- UC8
+Sup -- UC9
+Sup -- UC11
+
+
+' Integração com catracas
+Catraca -- UC10
+
+
+' Relações (mantendo seu padrão mais recente)
+UC1 ..> UC3 : <<include>>
+UC5 ..> UC3 : <<include>>
+UC6 ..> UC3 : <<include>>
+
+
+' =========================================================
+' ===================== GESTÃO NUTRICIONAL ================
+' =========================================================
+rectangle "Gestão Nutricional" {
+  usecase "Aprovar controle de qualidade" as NU1
+  usecase "Consultar cardápio" as NU2
+  usecase "Relatar contaminação" as NU3
+  usecase "Registrar valores nutricionais" as NU4
+  usecase "Acessar relatórios nutricionais" as NU5
+}
+
+
+' Atores de Nutrição
+Sup -- NU1
+User -- NU2
+Fun -- NU3
+Sup -- NU4
+Sup -- NU5
+
+
+@enduml
