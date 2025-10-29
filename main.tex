@@ -12,6 +12,7 @@
 \usepackage{enumitem}         % Personalização de listas
 \usepackage{graphicx}         % Para inserir imagens
 \usepackage{titlesec}         % Formatação de títulos
+\usepackage{float}            % Para posicionamento forçado de figuras
 
 % --------------------
 % Configurações
@@ -697,7 +698,7 @@ O sistema terá interfaces para perfis administrativos e será acessível aos us
 
 A Figura~\ref{fig:diagrama_geral} apresenta a visão geral do sistema, mostrando todos os atores e casos de uso principais dos três módulos integrados: Fila Virtual, Estoque e Nutrição/Qualidade.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{diagramas/diagrama-geral.png}
     \caption{Diagrama geral de casos de uso do Sistema de Gestão dos RUs da UFF}
@@ -711,7 +712,7 @@ O diagrama ilustra as interações entre os diferentes perfis de usuários (Usu�
 \subsubsection{Módulo Fila Virtual}
 A Figura~\ref{fig:diagrama_fila} detalha os casos de uso específicos do módulo de fila virtual.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{diagramas/diagrama-fila.png}
     \caption{Diagrama de casos de uso - Módulo Fila Virtual}
@@ -721,7 +722,7 @@ A Figura~\ref{fig:diagrama_fila} detalha os casos de uso específicos do módulo
 \subsubsection{Módulo Estoque}
 A Figura~\ref{fig:diagrama_estoque} apresenta os casos de uso do módulo de gestão de estoque.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{diagramas/diagrama-estoque.png}
     \caption{Diagrama de casos de uso - Módulo Estoque}
@@ -731,7 +732,7 @@ A Figura~\ref{fig:diagrama_estoque} apresenta os casos de uso do módulo de gest
 \subsubsection{Módulo Nutrição e Qualidade}
 A Figura~\ref{fig:diagrama_nutricao} ilustra os casos de uso relacionados à gestão nutricional.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{diagramas/diagrama-nutricao.png}
     \caption{Diagrama de casos de uso - Módulo Nutrição e Qualidade}
@@ -747,5 +748,91 @@ Durante o desenvolvimento deste projeto, foi apontada pelo professor uma questã
 Os relacionamentos de \textbf{inclusão} (\texttt{<<include>>}) nos diagramas de casos de uso \textbf{não representam sequência temporal} ou fluxo de execução, como seria o caso em um fluxograma. O relacionamento de inclusão indica que um caso de uso base sempre incorpora o comportamento de um caso de uso incluído, mas isso não define uma ordem específica de execução e foi nesse ponto que erramos ao construir os casos de uso para o módulo de estoque. 
 
 É possível que ainda existam erros dessa natureza no trabalho, uma revisão conceitual seguida da revisão deste trabalho se faz necessária.
+
+\newpage
+\section{Diagramas de Classe}
+
+Esta seção apresenta os diagramas de classe que modelam a estrutura estática do sistema. São apresentados dois tipos de diagramas para cada módulo: diagramas de análise, que modelam o domínio do problema e seus conceitos, e diagramas de projeto, que detalham a solução técnica com classes de implementação, atributos e métodos específicos.
+
+\subsection{Módulo Fila Virtual}
+
+O módulo de Fila Virtual gerencia o controle de acesso dos usuários aos restaurantes universitários através de um sistema de fila virtual, incluindo gestão de prioridades, notificações e integração com catracas físicas.
+
+\subsubsection{Diagrama de Análise}
+
+A Figura~\ref{fig:classe_fila_analise} apresenta o modelo conceitual do módulo de Fila Virtual, destacando as entidades principais e seus relacionamentos no domínio do problema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de classe/Fila_diagrama_analise.png}
+    \caption{Diagrama de classes de análise - Módulo Fila Virtual}
+    \label{fig:classe_fila_analise}
+\end{figure}
+
+\subsubsection{Diagrama de Projeto}
+
+A Figura~\ref{fig:classe_fila_projeto} detalha a implementação técnica do módulo, incluindo atributos, métodos e responsabilidades específicas de cada classe.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de classe/Fila_diagrama_projeto.png}
+    \caption{Diagrama de classes de projeto - Módulo Fila Virtual}
+    \label{fig:classe_fila_projeto}
+\end{figure}
+
+\subsection{Módulo Estoque}
+
+O módulo de Estoque controla o inventário de insumos e alimentos prontos, além de gerenciar a logística entre diferentes unidades dos RUs da UFF.
+
+\subsubsection{Diagrama de Análise}
+
+A Figura~\ref{fig:classe_estoque_analise} apresenta o modelo conceitual do módulo de Estoque, identificando as principais entidades do domínio e suas interações.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de classe/Estoque_Diagrama_Analise.jpg}
+    \caption{Diagrama de classes de análise - Módulo Estoque}
+    \label{fig:classe_estoque_analise}
+\end{figure}
+
+\subsubsection{Diagrama de Projeto}
+
+A Figura~\ref{fig:classe_estoque_projeto} ilustra as classes de implementação com suas operações e atributos específicos para o controle de estoque.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de classe/Estoque_Diagrama_Projeto.jpg}
+    \caption{Diagrama de classes de projeto - Módulo Estoque}
+    \label{fig:classe_estoque_projeto}
+\end{figure}
+
+\subsection{Módulo Nutrição e Qualidade}
+
+O módulo de Nutrição e Qualidade é responsável pelo controle nutricional dos alimentos, aprovação de qualidade, gestão do cardápio e registro de avaliações dos usuários.
+
+\subsubsection{Diagrama de Análise}
+
+A Figura~\ref{fig:classe_nutricao_analise} apresenta o modelo conceitual do módulo de Nutrição e Qualidade, destacando as entidades relacionadas ao controle nutricional e de qualidade.
+
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth]{\includegraphics[width=1.0\textwidth]{diagramas/Diagramas de classe/QualidadeENutricao- Analise.jpg}}
+    \caption{Diagrama de classes de análise - Módulo Nutrição e Qualidade}
+    \label{fig:classe_nutricao_analise}
+\end{figure}
+
+\subsubsection{Diagrama de Projeto}
+
+A Figura~\ref{fig:classe_nutricao_projeto} detalha a implementação técnica do módulo, incluindo operações de controle de qualidade, geração de relatórios e gestão de informações nutricionais.
+
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth]{\includegraphics[width=1.2\textwidth]{diagramas/Diagramas de classe/QualidadeENutricao- Projeto.jpg}}
+    \caption{Diagrama de classes de projeto - Módulo Nutrição e Qualidade}
+    \label{fig:classe_nutricao_projeto}
+\end{figure}
+
+% ...existing code...
+
 
 \end{document}
