@@ -700,7 +700,7 @@ A Figura~\ref{fig:diagrama_geral} apresenta a visão geral do sistema, mostrando
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{diagramas/diagrama-geral.png}
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de casos de uso/diagrama-geral.png}
     \caption{Diagrama geral de casos de uso do Sistema de Gestão dos RUs da UFF}
     \label{fig:diagrama_geral}
 \end{figure}
@@ -714,7 +714,7 @@ A Figura~\ref{fig:diagrama_fila} detalha os casos de uso específicos do módulo
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{diagramas/diagrama-fila.png}
+    \includegraphics[width=0.8\textwidth]{diagramas/Diagramas de casos de uso/diagrama-fila.png}
     \caption{Diagrama de casos de uso - Módulo Fila Virtual}
     \label{fig:diagrama_fila}
 \end{figure}
@@ -724,7 +724,7 @@ A Figura~\ref{fig:diagrama_estoque} apresenta os casos de uso do módulo de gest
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{diagramas/diagrama-estoque.png}
+    \includegraphics[width=0.8\textwidth]{diagramas/Diagramas de casos de uso/diagrama-estoque.png}
     \caption{Diagrama de casos de uso - Módulo Estoque}
     \label{fig:diagrama_estoque}
 \end{figure}
@@ -734,7 +734,7 @@ A Figura~\ref{fig:diagrama_nutricao} ilustra os casos de uso relacionados à ges
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{diagramas/diagrama-nutricao.png}
+    \includegraphics[width=0.8\textwidth]{diagramas/Diagramas de casos de uso/diagrama-nutricao.png}
     \caption{Diagrama de casos de uso - Módulo Nutrição e Qualidade}
     \label{fig:diagrama_nutricao}
 \end{figure}
@@ -832,7 +832,79 @@ A Figura~\ref{fig:classe_nutricao_projeto} detalha a implementação técnica do
     \label{fig:classe_nutricao_projeto}
 \end{figure}
 
-% ...existing code...
+\newpage
+\section{Diagramas de Estado}
 
+Esta seção apresenta os diagramas de máquina de estados, que modelam o comportamento dinâmico de objetos específicos do sistema.
+
+\subsection{Módulo Fila Virtual}
+A Figura~\ref{fig:estado_fila} ilustra os estados do objeto VagaNaFila.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de estado/Fila.png}
+    \caption{Diagrama de estados - Módulo Fila Virtual}
+    \label{fig:estado_fila}
+\end{figure}
+
+\subsection{Módulo Nutrição e Qualidade}
+A Figura~\ref{fig:estado_nutricao} detalha os estados do processo de aprovação de qualidade.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de estado/NutriQuali.png}
+    \caption{Diagrama de estados - Módulo Nutrição e Qualidade}
+    \label{fig:estado_nutricao}
+\end{figure}
+
+\newpage
+\section{Diagramas de Atividade}
+
+Os diagramas de atividade modelam os fluxos de trabalho e processos de negócio.
+
+\subsection{Módulo Fila Virtual}
+A Figura~\ref{fig:atividade_fila} detalha o fluxo de atividades para a fila virtual.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de atividade/Fila.png}
+    \caption{Diagrama de atividades - Módulo Fila Virtual}
+    \label{fig:atividade_fila}
+\end{figure}
+
+\subsection{Módulo Nutrição e Qualidade}
+A Figura~\ref{fig:atividade_nutricao} mostra o fluxo de atividades para o controle de qualidade.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de atividade/NutriQuali.png}
+    \caption{Diagrama de atividades - Módulo Nutrição e Qualidade}
+    \label{fig:atividade_nutricao}
+\end{figure}
+
+\newpage
+\section{Diagramas de Sequência}
+
+Esta seção contém os diagramas de sequência, detalhando as interações entre atores e objetos.
+
+\subsection{Módulo Fila Virtual}
+A Figura~\ref{fig:sequencia_fila} apresenta a sequência de mensagens para a fila.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de sequência/Fila.png}
+    \caption{Diagrama de sequência - Módulo Fila Virtual}
+    \label{fig:sequencia_fila}
+\end{figure}
+
+\subsection{Módulo Nutrição e Qualidade}
+A Figura~\ref{fig:sequencia_nutricao} ilustra a sequência de interações para a nutrição.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de sequência/NutriQuali.jpg}
+    \caption{Diagrama de sequência - Módulo Nutrição e Qualidade}
+    \label{fig:sequencia_nutricao}
+\end{figure}
 
 \end{document}
