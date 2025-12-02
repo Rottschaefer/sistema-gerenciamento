@@ -739,17 +739,17 @@ A Figura~\ref{fig:diagrama_nutricao} ilustra os casos de uso relacionados à ges
     \label{fig:diagrama_nutricao}
 \end{figure}
 
-\newpage
-\section{A melhorar}
+% \newpage
+% \section{A melhorar}
 
 
-Durante o desenvolvimento deste projeto, foi apontada pelo professor uma questão importante relacionada à distinção entre diagramas de casos de uso e fluxogramas de processo. 
+% Durante o desenvolvimento deste projeto, foi apontada pelo professor uma questão importante relacionada à distinção entre diagramas de casos de uso e fluxogramas de processo. 
 
-Os relacionamentos de \textbf{inclusão} (\texttt{<<include>>}) nos diagramas de casos de uso \textbf{não representam sequência temporal} ou fluxo de execução, como seria o caso em um fluxograma. O relacionamento de inclusão indica que um caso de uso base sempre incorpora o comportamento de um caso de uso incluído, mas isso não define uma ordem específica de execução e foi nesse ponto que erramos ao construir os casos de uso para o módulo de estoque. 
+% Os relacionamentos de \textbf{inclusão} (\texttt{<<include>>}) nos diagramas de casos de uso \textbf{não representam sequência temporal} ou fluxo de execução, como seria o caso em um fluxograma. O relacionamento de inclusão indica que um caso de uso base sempre incorpora o comportamento de um caso de uso incluído, mas isso não define uma ordem específica de execução e foi nesse ponto que erramos ao construir os casos de uso para o módulo de estoque. 
 
-É possível que ainda existam erros dessa natureza no trabalho, uma revisão conceitual seguida da revisão deste trabalho se faz necessária.
+% É possível que ainda existam erros dessa natureza no trabalho, uma revisão conceitual seguida da revisão deste trabalho se faz necessária.
 
-\newpage
+% \newpage
 \section{Diagramas de Classe}
 
 Esta seção apresenta os diagramas de classe que modelam a estrutura estática do sistema. São apresentados dois tipos de diagramas para cada módulo: diagramas de análise, que modelam o domínio do problema e seus conceitos, e diagramas de projeto, que detalham a solução técnica com classes de implementação, atributos e métodos específicos.
@@ -837,6 +837,24 @@ A Figura~\ref{fig:classe_nutricao_projeto} detalha a implementação técnica do
 
 Esta seção apresenta os diagramas de máquina de estados, que modelam o comportamento dinâmico de objetos específicos do sistema.
 
+\subsection{Módulo Estoque}
+As Figuras~\ref{fig:estado_estoque} e~\ref{fig:estado_estoque_ru} apresentam os estados de um pedido de insumos e do RU, respectivamente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de estado/Diagrama Pedido Estados.jpg}
+    \caption{Diagrama de estados - Módulo Estoque (Pedido)}
+    \label{fig:estado_estoque}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de estado/Diagrama RU Estados.png}
+    \caption{Diagrama de estados - Módulo Estoque (RU)}
+    \label{fig:estado_estoque_ru}
+\end{figure}
+
+
 \subsection{Módulo Fila Virtual}
 A Figura~\ref{fig:estado_fila} ilustra os estados do objeto VagaNaFila.
 
@@ -846,6 +864,8 @@ A Figura~\ref{fig:estado_fila} ilustra os estados do objeto VagaNaFila.
     \caption{Diagrama de estados - Módulo Fila Virtual}
     \label{fig:estado_fila}
 \end{figure}
+
+
 
 \subsection{Módulo Nutrição e Qualidade}
 A Figura~\ref{fig:estado_nutricao} detalha os estados do processo de aprovação de qualidade.
@@ -862,6 +882,30 @@ A Figura~\ref{fig:estado_nutricao} detalha os estados do processo de aprovação
 
 Os diagramas de atividade modelam os fluxos de trabalho e processos de negócio.
 
+\subsection{Módulo Estoque}
+As Figuras~\ref{fig:atividade_estoque},~\ref{fig:atividade_estoque_ppc} e~\ref{fig:atividade_estoque_relatorio} ilustram os fluxos de atividades para o pedido de insumos, pedido PPC e geração de relatórios.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de atividade/Diagrama Pedido Insumos Atividades.jpg}
+    \caption{Diagrama de atividades - Módulo Estoque (Pedido de Insumos)}
+    \label{fig:atividade_estoque}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de atividade/Diagrama Pedido PPC Atividades.jpg}
+    \caption{Diagrama de atividades - Módulo Estoque (Pedido PPC)}
+    \label{fig:atividade_estoque_ppc}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de atividade/Diagrama Relatório Atividades.jpg}
+    \caption{Diagrama de atividades - Módulo Estoque (Relatório Atividades)}
+    \label{fig:atividade_estoque_relatorio}
+\end{figure}
+
 \subsection{Módulo Fila Virtual}
 A Figura~\ref{fig:atividade_fila} detalha o fluxo de atividades para a fila virtual.
 
@@ -871,6 +915,8 @@ A Figura~\ref{fig:atividade_fila} detalha o fluxo de atividades para a fila virt
     \caption{Diagrama de atividades - Módulo Fila Virtual}
     \label{fig:atividade_fila}
 \end{figure}
+
+
 
 \subsection{Módulo Nutrição e Qualidade}
 A Figura~\ref{fig:atividade_nutricao} mostra o fluxo de atividades para o controle de qualidade.
@@ -887,6 +933,30 @@ A Figura~\ref{fig:atividade_nutricao} mostra o fluxo de atividades para o contro
 
 Esta seção contém os diagramas de sequência, detalhando as interações entre atores e objetos.
 
+\subsection{Módulo Estoque}
+As Figuras~\ref{fig:sequencia_estoque},~\ref{fig:sequencia_estoque_ppc} e~\ref{fig:sequencia_estoque_relatorio} detalham as interações nos processos de pedido de insumos, pedido PPC e geração de relatórios.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de sequência/Diagrama Pedido Insumos Sequência.jpg}
+    \caption{Diagrama de sequência - Módulo Estoque (Pedido de Insumos)}
+    \label{fig:sequencia_estoque}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de sequência/Diagrama Pedido PPC Sequência.jpg}
+    \caption{Diagrama de sequência - Módulo Estoque (Pedido PPC)}
+    \label{fig:sequencia_estoque_ppc}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramas/Diagramas de sequência/Diagrama Relatório Sequência.jpg}
+    \caption{Diagrama de sequência - Módulo Estoque (Relatório)}
+    \label{fig:sequencia_estoque_relatorio}
+\end{figure}
+
 \subsection{Módulo Fila Virtual}
 A Figura~\ref{fig:sequencia_fila} apresenta a sequência de mensagens para a fila.
 
@@ -897,6 +967,7 @@ A Figura~\ref{fig:sequencia_fila} apresenta a sequência de mensagens para a fil
     \label{fig:sequencia_fila}
 \end{figure}
 
+
 \subsection{Módulo Nutrição e Qualidade}
 A Figura~\ref{fig:sequencia_nutricao} ilustra a sequência de interações para a nutrição.
 
@@ -906,5 +977,12 @@ A Figura~\ref{fig:sequencia_nutricao} ilustra a sequência de interações para 
     \caption{Diagrama de sequência - Módulo Nutrição e Qualidade}
     \label{fig:sequencia_nutricao}
 \end{figure}
+
+\newpage
+\section{Dificuldades e Futuras Melhorias}
+
+Durante o desenvolvimento deste projeto, optou-se por uma abordagem modularizada para dividir as responsabilidades entre os membros do grupo. No entanto, essa divisão acabou sendo excessiva, o que resultou em uma integração dos três módulos (Fila Virtual, Estoque e Nutrição/Qualidade) mais desconexa do que o ideal. Para trabalhos futuros, uma comunicação mais constante e uma etapa de integração mais robusta seriam necessárias para garantir uma coesão maior entre as partes do sistema.
+
+Além disso, identificamos erros técnicos na elaboração de alguns diagramas. Um exemplo específico ocorre no diagrama de sequência do módulo de Fila Virtual, onde o comprimento das barras de ativação dos métodos não reflete com precisão o tempo de execução ou o escopo de vida das chamadas, fugindo um pouco da notação padrão UML. Esses pontos de atenção servem como aprendizado para o aprimoramento da modelagem em iterações futuras.
 
 \end{document}
